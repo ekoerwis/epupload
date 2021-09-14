@@ -77,3 +77,5 @@ Use For
 This application is upload file fiture for eplant application developed by Solusi Mitra Andalan,Indonesia.
 Eplant application is oil palm erp application.
 url to call : http://localhost/epupload/docupload/eplant?type=MR&id=test
+Setting database : file application/config/database.php
+Lebih Lanjut Baca Instal Php.docx
