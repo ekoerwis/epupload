@@ -201,10 +201,23 @@ class DocUpload extends CI_Controller {
 
 				}
 			  }
+	}
+
+	public function downloadGet(){
+		$id=$this->input->get("ID");
+		$data = $this->DocUploadModel->getOneFile($id);
+
+		$docpath=$data->FILELOC.'/'.$data->FILENAME;
 		
-
-
-
+		if(file_exists($docpath)) {
+			force_download( substr($data->FILELOC,2).'/'.$data->FILENAME,NULL);
+		} else {
+			echo  "<script language='JavaScript'>
+					alert('Gagal Download file : File tidak ada');
+					window.close();
+					</script>";
+		}
+		// force_download( substr($data->FILELOC,2).'/'.$data->FILENAME,NULL);
 	}
 
 
